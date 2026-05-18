@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalesMock - Novo Pedido</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html"><i class="bi bi-cart-check-fill"></i> SalesMock</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lista-produtos.html">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lista-clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="lista-pedidos.html">Pedidos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5 pt-5">
+        <div class="row g-4">
+            <!-- Coluna do Formulário -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0 text-primary fw-bold"><i class="bi bi-bag-plus me-2"></i>Configurar Itens do Pedido</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="form-pedido" class="row g-3">
+                            <div class="col-md-12">
+                                <label class="form-label fw-semibold">Selecionar Cliente</label>
+                                <select id="select-cliente" class="form-select form-select-lg" required>
+                                    <option value="">Escolha um cliente...</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12">
+                                <hr class="my-3">
+                                <label class="form-label fw-semibold">Selecionar Produto</label>
+                                <select id="select-produto" class="form-select form-select-lg" required>
+                                    <option value="">Escolha um produto...</option>
+                                </select>
+                                <div id="estoque-disponivel" class="form-text mt-2 text-primary fw-bold"></div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Quantidade</label>
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="alterarQtd(-1)">-</button>
+                                    <input type="number" id="qtd-pedido" class="form-control text-center" value="1" min="1" required>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="alterarQtd(1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Status do Pedido</label>
+                                <select id="status-pedido" class="form-select">
+                                    <option value="Concluído">Concluído</option>
+                                    <option value="Pendente">Pendente</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 mt-4 d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+                                    <i class="bi bi-check2-circle me-2"></i>Finalizar e Registrar Venda
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna de Resumo (Sidebar) -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm border-0 border-top border-primary border-4 mb-3">
+                    <div class="card-body text-center py-4">
+                        <h6 class="text-uppercase text-muted small fw-bold mb-3">Total do Pedido</h6>
+                        <h1 class="display-5 fw-bold text-success mb-0" id="display-total">R$ 0,00</h1>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-3">Detalhes do Item</h6>
+                        <ul class="list-group list-group-flush small">
+                            <li class="list-group-item d-flex justify-content-between px-0">
+                                <span>Preço Unitário:</span>
+                                <span id="resumo-preco" class="fw-bold">-</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between px-0">
+                                <span>Subtotal:</span>
+                                <span id="resumo-subtotal" class="fw-bold">-</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/pedidos.js"></script>
+</body>
+</html>
