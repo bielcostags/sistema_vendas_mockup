@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SalesMock - Produtos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+
+    <title>BikeStore</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
-        <header>
+
+<body>
+
+<header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
 
@@ -134,66 +136,141 @@
     </nav>
 
 </header>
-<div class="container mt-5">
 
-    <h2 class="pb-3 border-bottom">
-        Bicicletas Cadastradas
-    </h2>
+<main>
 
-    <div class="row fw-bold border-bottom py-2">
+<section class="py-5 text-center container">
 
-        <div class="col-md-2">Modelo</div>
-        <div class="col-md-2">Marca</div>
-        <div class="col-md-2">Categoria</div>
-        <div class="col-md-2">Estoque</div>
-        <div class="col-md-2">Preço</div>
-        <div class="col-md-2">Total</div>
+    <div class="row py-lg-5">
+
+        <div class="col-lg-6 col-md-8 mx-auto">
+
+            <h1 class="fw-light">
+                BikeStore
+            </h1>
+
+            <p class="lead text-body-secondary">
+
+                Loja especializada em bicicletas urbanas, MTB e Speed.
+
+            </p>
+
+            <p>
+
+                <a href="cadastrar-produtos.html"
+                   class="btn btn-success my-2">
+                    Cadastrar Bicicleta
+                </a>
+
+                <a href="cadastrar-pedidos.html"
+                   class="btn btn-secondary my-2">
+                    Novo Pedido
+                </a>
+
+            </p>
+
+        </div>
 
     </div>
 
-    <div id="listaProdutos"></div>
+</section>
 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-    const produtos =
-JSON.parse(localStorage.getItem("produtos")) || [];
+<div class="album py-5 bg-body-tertiary">
 
-produtos.forEach(produto => {
+    <div class="container">
 
-    document.getElementById("listaProdutos").innerHTML += `
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-        <div class="row py-3 border-bottom">
+            <!-- CARD 1 -->
 
-            <div class="col-md-2">
-                ${produto.modelo}
+            <div class="col">
+
+                <div class="card shadow-sm">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600"
+                        height="225"
+                        style="object-fit:cover">
+
+                    <div class="card-body">
+
+                        <h5>Mountain Bike</h5>
+
+                        <p class="card-text">
+
+                            Bicicletas para trilhas e aventuras.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="col-md-2">
-                ${produto.marca}
+            <!-- CARD 2 -->
+
+            <div class="col">
+
+                <div class="card shadow-sm">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?w=600"
+                        height="225"
+                        style="object-fit:cover">
+
+                    <div class="card-body">
+
+                        <h5>Speed</h5>
+
+                        <p class="card-text">
+
+                            Alta performance para estrada.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="col-md-2">
-                ${produto.categoria}
-            </div>
+            <!-- CARD 3 -->
 
-            <div class="col-md-2">
-                ${produto.estoque}
-            </div>
+            <div class="col">
 
-            <div class="col-md-2">
-                R$ ${produto.preco}
-            </div>
+                <div class="card shadow-sm">
 
-            <div class="col-md-2">
-                ${produto.valorTotal}
+                    <img
+                        src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=600"
+                        height="225"
+                        style="object-fit:cover">
+
+                    <div class="card-body">
+
+                        <h5>Urbana</h5>
+
+                        <p class="card-text">
+
+                            Mobilidade para o dia a dia.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-    `;
+    </div>
 
-});
-</script>
+</div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
